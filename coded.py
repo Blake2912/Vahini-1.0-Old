@@ -111,7 +111,7 @@ def frame_step(action):
         DX = dest[1]-cur[1]
         DY = dest[0]-cur[0]
         rad = atan2(DY, DX)
-        deg = rad * (180 / 3.141592)
+        deg = rad * (180 / pi)
 
         #correction_angle = deg + cur_north
         if deg<0:
@@ -170,10 +170,6 @@ def play(model):
 
 if __name__ == "__main__":
     saved_model = 'saved-models/128-128-64-50000-100000.h5'
-    #dest = input("Enter destination coordinates").split(" ")
-    #dest[0] = float(dest[0])
-    #dest[1] = float(dest[1])
-    #dest = [12.966875875743142, 77.71197768093576]
     dest=[12.964224333333334,77.70739866666666]
     model = neural_net(NUM_SENSORS, [128, 128], saved_model)
     get_cur()
